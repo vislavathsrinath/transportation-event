@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Link Details</title>
+    <link rel="static/stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Link Details</h1>
+
+    {% if details %}
+        <p>Free Speed: {{ details[0] }}</p>
+        <p>Capacity: {{ details[1] }}</p>
+        <p>Modes: {{ details[2] }}</p>
+    {% else %}
+        <p>No details found.</p>
+    {% endif %}
+</body>
+</html>

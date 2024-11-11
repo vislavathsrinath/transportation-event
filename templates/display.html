@@ -1,0 +1,54 @@
+<!-- Display query results in table -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Results</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='../static/styles.css') }}">
+</head>
+<body>
+{% if events %}
+
+<table border="1">
+  <tr>
+    <th>Time</th>
+    <th>Type</th>
+    <th>Link</th>
+    <th>Vehicle</th>
+    <th>Facility</th>
+    <th>Delay</th>
+    <th>Person</th>
+    <th>Network Mode</th>
+    <th>Relative Position</th>
+    <th>Leg Mode</th>
+    <th>Act Type</th>
+    <th>Task Type</th>
+    <th>Task Index</th>  
+    <th>Dvrp Mode</th>
+  </tr>
+
+  {% for event in events %}
+  <tr>
+    <td>{{event.time}}</td>
+    <td>{{event.type}}</td>
+    <td>{{event.link}}</td>
+    <td>{{event.vehicle}}</td>
+    <td>{{event.facility}}</td>
+    <td>{{event.delay}}</td>
+    <td>{{event.person}}</td>
+    <td>{{event.networkMode}}</td>
+    <td>{{event.relativePosition}}</td>
+    <td>{{event.legMode}}</td>
+    <td>{{event.actType}}</td>
+    <td>{{event.taskType}}</td>
+    <td>{{event.taskIndex}}</td>
+    <td>{{event.dvrpMode}}</td>
+  </tr>
+  {% endfor %}
+</table>
+
+{% else %}
+   // No results text
+{% endif %}
+</body>
+</html>

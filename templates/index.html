@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transportation Events</title>
+    <link rel="stylesheet" href="static/styles.css">
+</head>
+<body>
+    <h1>Transportation Events </h1>
+
+    <form action="/searchbyperson" method="post">
+        <label for="person_id">Person ID:</label>
+        <input type="text" name="person_id" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <form action="/search_by_link" method="post">
+        <label for="link_id">Link ID:</label>
+        <input type="text" name="link_id" required>
+        <button type="submit">Search</button>
+    </form>
+
+    <form action="/link_details" method="post">
+        <label for="link_id">Get Details:</label>
+        <input type="text" name="link_id" required>
+        <button type="submit">Get Details</button>
+    </form>
+
+    <form action="/events_in_time_range" method="post">
+        <label for="link_id">Get Events in Time Range:</label>
+        <input type="text" name="link_id" required>
+        <label for="start_time">Start Time:</label>
+        <input type="text" name="start_time" placeholder="HH:MM AM/PM" required>
+        <label for="end_time">End Time:</label>
+        <input type="text" name="end_time" placeholder="HH:MM AM/PM" required>
+        <button type="submit">Search</button>
+    </form>
+</body>
+</html>
